@@ -7,7 +7,9 @@ const ROOT_URL =
   process.env.NEXT_PUBLIC_URL ||
   (typeof process.env.VERCEL_PROJECT_PRODUCTION_URL === "string"
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+    : process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://space-invaders-brown.vercel.app");
 
 const FC_EMBED = {
   version: "1" as const,
