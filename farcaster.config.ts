@@ -40,5 +40,6 @@ export const farcasterConfig = {
     ogDescription:
       "Classic arcade shooter reimagined for Web3. Play now on Farcaster!",
     ogImageUrl: `${ROOT_URL}/hero-image.png`,
+    noindex: false,
   },
 } as const;
