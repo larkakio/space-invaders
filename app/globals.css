@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-orbitron: 'Orbitron', 'Segoe UI', 'Franklin Gothic', system-ui, sans-serif;
+  --font-rajdhani: 'Rajdhani', 'Segoe UI', system-ui, sans-serif;
+  --font-share-tech-mono: 'Share Tech Mono', 'Consolas', 'Monaco', monospace;
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #ff00ff;
+  --neon-purple: #9d00ff;
+  --electric-blue: #0080ff;
+  --deep-space: #0a0e27;
+  --cosmic-purple: #1a0b2e;
+  --star-white: #ffffff;
+  --danger-red: #ff0055;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0e27 0%, #1a0b2e 100%);
+  color: var(--star-white);
+}
+
+body {
+  font-family: var(--font-rajdhani);
+}
+
+button {
+  touch-action: manipulation;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
