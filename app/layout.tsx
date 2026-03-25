@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Providers } from "@/components/Providers";
-import { FarcasterReady } from "@/components/FarcasterReady";
 import "./globals.css";
 
 const ROOT_URL =
@@ -10,21 +9,6 @@ const ROOT_URL =
     : process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
       : "https://space-invaders-brown.vercel.app");
-
-const FC_EMBED = {
-  version: "1" as const,
-  imageUrl: `${ROOT_URL}/hero-image.png`,
-  button: {
-    title: "Play Space Invaders",
-    action: {
-      type: "launch_frame" as const,
-      name: "Space Invaders: Cosmic Defense",
-      url: ROOT_URL,
-      splashImageUrl: `${ROOT_URL}/hero-image.png`,
-      splashBackgroundColor: "#0A0E27",
-    },
-  },
-};
 
 export const metadata: Metadata = {
   title: "Space Invaders: Cosmic Defense",
@@ -60,8 +44,6 @@ export const metadata: Metadata = {
     images: [`${ROOT_URL}/hero-image.png`],
   },
   other: {
-    "fc:miniapp": JSON.stringify(FC_EMBED),
-    "fc:frame": JSON.stringify(FC_EMBED),
     "base:app_id": "6981adffb352dc0eac026c25",
   },
 };
@@ -72,10 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <Providers>
-          <FarcasterReady />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
