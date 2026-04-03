@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Providers } from "@/components/Providers";
 import "./globals.css";
 
@@ -11,12 +11,10 @@ const ROOT_URL =
       : "https://space-invaders-brown.vercel.app");
 
 export const metadata: Metadata = {
+  metadataBase: new URL(ROOT_URL),
   title: "Space Invaders: Cosmic Defense",
   description:
     "Classic arcade shooter reimagined for Web3. Defend Earth from alien invasion!",
-  viewport:
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
-  themeColor: "#0A0E27",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -44,8 +42,18 @@ export const metadata: Metadata = {
     images: [`${ROOT_URL}/hero-image.png`],
   },
   other: {
-    "base:app_id": "6981adffb352dc0eac026c25",
+    "base:app_id":
+      process.env.NEXT_PUBLIC_BASE_APP_ID ?? "6981adffb352dc0eac026c25",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0A0E27",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

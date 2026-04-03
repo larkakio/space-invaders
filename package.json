@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.81.5",
+    "@walletconnect/ethereum-provider": "^2.21.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
     "next": "14.2.18",
